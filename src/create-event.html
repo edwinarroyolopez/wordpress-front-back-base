@@ -1,0 +1,88 @@
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<style type="text/css">
+    #formContainer {
+        margin: auto;
+        max-width: 800px;
+    }
+</style>
+<div id="formContainer">
+    <label for="">Datos del anfitrión</label>
+    <div class="form-group has-feedback">
+        <label class="control-label" for="hostName">Responsable</label>
+        <input type="text" class="form-control" id="hostName" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="control-label" for="email">Email</label>
+        <input type="text" class="form-control" id="email" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="control-label" for="phone">Teléfono</label>
+        <input type="text" class="form-control" id="phone" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <label for="">Datos del evento</label>
+    <div class="form-group has-feedback">
+        <label class="control-label" for="eventName">Nombre del evento</label>
+        <input type="text" class="form-control" id="eventName" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="control-label" for="eventDescription">Descripción del evento</label>
+        <input type="text" class="form-control" id="eventDescription" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="control-label" for="eventCity">Ciudad - Departamento</label>
+        <input type="text" class="form-control" id="eventCity" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+    <div class="form-group has-feedback">
+        <label class="control-label" for="eventPlace">Lugar</label>
+        <input type="text" class="form-control" id="eventPlace" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="control-label" for="eventDate">Fecha</label>
+        <input type="text" class="form-control" id="eventDate" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+
+    <div class="form-group has-feedback">
+        <label class="control-label" for="eventHour">Hora</label>
+        <input type="text" class="form-control" id="eventHour" aria-describedby="inputSuccess2Status">
+        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+    </div>
+
+
+    <button type="button" id="btnCancel" class="btn btn-default">Cancelar</button>
+    <button type="button" id="btnCreateEvent" class="btn btn-primary">Crear evento</button>
+
+</div>
+<script type="text/javascript">
+    /*
+        url format local: 
+            http://127.0.0.1:5500/event/inscription-event.html?event=reclutando&description=midescripcion&place=atanacio&date=10-10-2021&hour=10pm
+        url format prod:
+            https://sitio.com/inscripcion-a-evento?event=reclutando&description=midescripcion&place=atanacio&date=10-10-2021&hour=10pm    
+    */
+    console.log(window.location.href)
+    const urlStr = window.location.href
+
+    const url = new URL(urlStr);
+    let event = url.searchParams.get("event");
+    let description = url.searchParams.get("description");
+    let place = url.searchParams.get("place");
+    let date = url.searchParams.get("date");
+    let hour = url.searchParams.get("hour");
+    
+    console.log('event: ', event)
+    console.log('description: ', description)
+    console.log('place: ', place)
+    console.log('date: ', date)
+    console.log('hour: ', hour)
+</script>
